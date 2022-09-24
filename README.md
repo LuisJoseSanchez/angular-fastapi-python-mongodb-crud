@@ -1,4 +1,6 @@
-# Aplicación simple tipo CRUD hecha con Angular, FastAPI, Python y MongoDB
+<img src="angular.svg">
+
+# Aplicación tipo CRUD hecha con Angular, FastAPI, Python y MongoDB
 
 Aplicación muy sencilla que permite hacer el alta, baja, modificación y listado de los clientes de un banco.
 
