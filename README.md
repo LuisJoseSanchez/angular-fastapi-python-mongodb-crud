@@ -1,8 +1,4 @@
-<img src="img/angular.svg" height="80">
-<img src="img/primeng.svg" height="80">
-<img src="img/fastapi.png" height="80">
-<img src="img/python.svg" height="80">
-<img src="img/mongodb.svg" height="80">
+<img src="img/angular.svg" height="80"><img src="img/primeng.svg" height="76"><img src="img/fastapi.png" height="80"><img src="img/python.svg" height="80"><img src="img/mongodb.svg" height="76">
 <img src="img/docker.png" height="80">
 
 # Aplicación tipo CRUD hecha con Angular, FastAPI, Python y MongoDB
