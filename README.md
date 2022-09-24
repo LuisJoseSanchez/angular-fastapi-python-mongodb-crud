@@ -1,4 +1,4 @@
-<img src="angular.svg">
+<img src="img/angular.svg">
 
 # Aplicación tipo CRUD hecha con Angular, FastAPI, Python y MongoDB
 
