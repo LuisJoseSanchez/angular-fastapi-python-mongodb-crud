@@ -1,7 +1,7 @@
 <img src="img/angular.png" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="img/primeng.svg" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="img/fastapi2.png" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="img/python.svg" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="img/python.png" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="img/mongodb.svg" height="60">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="img/docker.png" height="60">
 
