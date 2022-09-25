@@ -25,7 +25,7 @@ export class ClientesService {
   }
 
   updateCliente(id: string, cliente: Cliente): Promise<void> {
-    return lastValueFrom(this.http.put<void>(`${API_URL}cliente`, cliente));
+    return lastValueFrom(this.http.put<void>(`${API_URL}cliente/${id}`, cliente));
   }
 
   deleteCliente(id: string): Promise<void> {

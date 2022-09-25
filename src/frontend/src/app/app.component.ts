@@ -14,6 +14,7 @@ export class AppComponent {
   muestraFormulario = false;
 
   formularioCliente = new FormGroup({
+    _id: new FormControl(''),
     dni: new FormControl(''),
     nombre: new FormControl(''),
     direccion: new FormControl(''),
@@ -24,25 +25,13 @@ export class AppComponent {
     this.cargaClientes();
   }
 
-  async nuevoCliente() {
-    const id = await this.clientesService.addCliente({
-      dni: '12345',
-      nombre: 'Alan Brito',
-      direccion: 'Avda de Andalucía',
-      telefono: '555 678954'
-    });
-
-    console.log(id);
-
-    this.cargaClientes();
-  }
-
   async cargaClientes() {
     this.clientes =  await this.clientesService.getClientes();
   }
 
-  editaCliente() {
-
+  editaCliente(cliente: Cliente) {
+    this.formularioCliente.patchValue(cliente);
+    this.muestraFormulario = true;
   }
 
   async borraCliente(id: string) {
@@ -51,7 +40,14 @@ export class AppComponent {
   }
 
   async submitCliente() {
-    await this.clientesService.addCliente(<Cliente>this.formularioCliente.value);
+    const cliente = <Cliente>this.formularioCliente.value;
+
+    if (cliente["_id"] === '') {
+      await this.clientesService.addCliente(cliente);
+    } else {
+      await this.clientesService.updateCliente(<string>cliente["_id"], cliente);
+    }
+
     this.muestraFormulario = false;
     this.formularioCliente.reset();
     this.cargaClientes();
