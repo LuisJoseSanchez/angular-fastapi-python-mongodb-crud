@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Cliente } from './cliente';
 import { ClientesService } from './clientes.service';
 
@@ -11,6 +12,13 @@ export class AppComponent {
 
   clientes: Cliente[] = [];
   muestraFormulario = false;
+
+  formularioCliente = new FormGroup({
+    dni: new FormControl(''),
+    nombre: new FormControl(''),
+    direccion: new FormControl(''),
+    telefono: new FormControl('')
+  });
 
   constructor(private clientesService: ClientesService) {
     this.cargaClientes();
@@ -37,7 +45,15 @@ export class AppComponent {
 
   }
 
-  borraCliente() {
+  async borraCliente(id: string) {
+    await this.clientesService.deleteCliente(id);
+    this.cargaClientes();
+  }
 
+  async submitCliente() {
+    await this.clientesService.addCliente(<Cliente>this.formularioCliente.value);
+    this.muestraFormulario = false;
+    this.formularioCliente.reset();
+    this.cargaClientes();
   }
 }

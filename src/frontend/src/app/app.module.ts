@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 // PrimeNg
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { SpeedDialModule } from 'primeng/speeddial';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DialogModule } from 'primeng/dialog';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +25,14 @@ import { SpeedDialModule } from 'primeng/speeddial';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+
+    // PrimeNg
     ButtonModule,
-    TableModule,
-    SpeedDialModule
+    DialogModule,
+    SpeedDialModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

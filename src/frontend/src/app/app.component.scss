@@ -24,3 +24,24 @@ h1 {
 h2 {
   font-size: 2em;
 }
+
+#form-fields {
+  text-align: left;
+  padding: 2em;
+}
+
+.field-wrap {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.field-wrap input {
+  width: 100%;
+  flex-grow: 1;
+  margin-bottom: 1em;
+}
+
+.field-wrap label {
+  margin-right: 0.5em;
+}
