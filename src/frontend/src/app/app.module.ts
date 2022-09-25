@@ -8,7 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // PrimeNg
 import { ButtonModule } from 'primeng/button';
-import {TableModule} from 'primeng/table';
+import { TableModule } from 'primeng/table';
+import { SpeedDialModule } from 'primeng/speeddial';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {TableModule} from 'primeng/table';
     AppRoutingModule,
     HttpClientModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    SpeedDialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

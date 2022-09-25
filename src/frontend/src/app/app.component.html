@@ -1,44 +1,51 @@
-<button (click)="nuevoCliente()">Añadir cliente</button>
-<div *ngFor="let cliente of clientes">
-  {{ cliente | json }}
+<div id="content">
+  <h1>CPIFP BANK</h1>
+  <h2>Gestion de clientes</h2>
+  
+  <p-table [value]="clientes" [paginator]="true" [rows]="8">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-c>
+      <tr>
+        <td>{{ c.dni }}</td>
+        <td>{{ c.nombre }}</td>
+        <td>{{ c.direccion }}</td>
+        <td>{{ c.telefono }}</td>
+        <td>
+          <button
+            pButton
+            type="button"
+            icon="pi pi-pencil"
+            class="p-button-rounded"
+            (click)="editaCliente()"
+            title="Edita cliente"
+          ></button>
+        </td>
+        <td>
+          <button
+            pButton
+            type="button"
+            icon="pi pi-trash"
+            class="p-button-rounded"
+            (click)="borraCliente()"
+            title="Borra cliente"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  
+  <div class="add-button">
+    <p-speedDial (click)="muestraFormulario = true"></p-speedDial>
+  </div>
 </div>
 
-<p-table [value]="clientes" [paginator]="true" [rows]="10">
-  <ng-template pTemplate="header">
-    <tr>
-      <th></th>
-      <th>Description</th>
-      <th>Purchase price</th>
-      <th>Sale price</th>
-      <th>Stock</th>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-c>
-    <tr>
-      <td>{{ c.dni }}</td>
-      <td>{{ c.nombre}}</td>
-      <td>{{ c.direccion }}</td>
-      <td>{{ c.telefono }}</td>
-      <td>
-        <button
-          pButton
-          type="button"
-          icon="pi pi-pencil"
-          class="p-button-rounded"
-          (click)="editaCliente()"
-          title="Edita cliente"
-        ></button>
-      </td>
-      <td>
-        <button
-          pButton
-          type="button"
-          icon="pi pi-trash"
-          class="p-button-rounded"
-          (click)="borraCliente()"
-          title="Borra cliente"
-        ></button>
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+

@@ -10,6 +10,7 @@ import { ClientesService } from './clientes.service';
 export class AppComponent {
 
   clientes: Cliente[] = [];
+  muestraFormulario = false;
 
   constructor(private clientesService: ClientesService) {
     this.cargaClientes();
@@ -37,6 +38,6 @@ export class AppComponent {
   }
 
   borraCliente() {
-    
+
   }
 }
