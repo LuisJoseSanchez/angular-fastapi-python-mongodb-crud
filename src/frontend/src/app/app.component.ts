@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cliente } from './cliente';
 import { ClientesService } from './clientes.service';
 
 @Component({
@@ -8,16 +9,26 @@ import { ClientesService } from './clientes.service';
 })
 export class AppComponent {
 
-  clientes$ = this.clientesService.getClientes();
+  clientes: Cliente[] = [];
 
-  constructor(private clientesService: ClientesService) {}
+  constructor(private clientesService: ClientesService) {
+    this.cargaClientes();
+  }
 
-  addCliente() {
-    this.clientesService.addCliente({
+  async addCliente() {
+    const id = await this.clientesService.addCliente({
       dni: '12345',
       nombre: 'Alan Brito',
       direccion: 'Avda de Andalucía',
       telefono: '555 678954'
     });
+
+    console.log(id);
+
+    this.cargaClientes();
+  }
+
+  async cargaClientes() {
+    this.clientes =  await this.clientesService.getClientes();
   }
 }

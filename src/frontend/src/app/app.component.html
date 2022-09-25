@@ -1,2 +1,4 @@
 <button (click)="addCliente()">Añadir cliente</button>
-{{ clientes$ | async | json }}
+<div *ngFor="let cliente of clientes">
+  {{ cliente | json }}
+</div>
