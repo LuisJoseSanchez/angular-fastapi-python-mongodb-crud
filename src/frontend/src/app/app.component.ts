@@ -12,6 +12,7 @@ export class AppComponent {
 
   clientes: Cliente[] = [];
   muestraFormulario = false;
+  accion = "anadir cliente";
 
   formularioCliente = new FormGroup({
     _id: new FormControl(''),
@@ -30,6 +31,7 @@ export class AppComponent {
   }
 
   editaCliente(cliente: Cliente) {
+    this.accion = "editar cliente";
     this.formularioCliente.patchValue(cliente);
     this.muestraFormulario = true;
   }
@@ -40,16 +42,19 @@ export class AppComponent {
   }
 
   async submitCliente() {
-    const cliente = <Cliente>this.formularioCliente.value;
+    let cliente = <Cliente>this.formularioCliente.value;
 
-    if (cliente["_id"] === '') {
+    if (this.accion == "anadir cliente") {
+      console.log("Nuevo");
       await this.clientesService.addCliente(cliente);
     } else {
+      console.log("Edita");
       await this.clientesService.updateCliente(<string>cliente["_id"], cliente);
     }
 
-    this.muestraFormulario = false;
     this.formularioCliente.reset();
+    this.muestraFormulario = false;
     this.cargaClientes();
+    this.accion = "anadir cliente"
   }
 }
