@@ -9,8 +9,8 @@
 
 Aplicación muy sencilla que permite hacer el alta, baja, modificación y listado de los clientes de un banco.
 
-<img src="img/captura1.png" height="400">
-<img src="img/captura2.png" height="400">
+<img src="img/captura1.png">
+<img src="img/captura2.png">
 
 ## Frontend
 
