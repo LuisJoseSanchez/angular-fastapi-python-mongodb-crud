@@ -15,7 +15,7 @@ export class AppComponent {
     this.cargaClientes();
   }
 
-  async addCliente() {
+  async nuevoCliente() {
     const id = await this.clientesService.addCliente({
       dni: '12345',
       nombre: 'Alan Brito',
@@ -30,5 +30,13 @@ export class AppComponent {
 
   async cargaClientes() {
     this.clientes =  await this.clientesService.getClientes();
+  }
+
+  editaCliente() {
+
+  }
+
+  borraCliente() {
+    
   }
 }

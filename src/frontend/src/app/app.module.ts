@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+// PrimeNg
+import { ButtonModule } from 'primeng/button';
+import {TableModule} from 'primeng/table';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ButtonModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

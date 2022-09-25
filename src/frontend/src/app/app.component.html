@@ -1,4 +1,44 @@
-<button (click)="addCliente()">Añadir cliente</button>
+<button (click)="nuevoCliente()">Añadir cliente</button>
 <div *ngFor="let cliente of clientes">
   {{ cliente | json }}
 </div>
+
+<p-table [value]="clientes" [paginator]="true" [rows]="10">
+  <ng-template pTemplate="header">
+    <tr>
+      <th></th>
+      <th>Description</th>
+      <th>Purchase price</th>
+      <th>Sale price</th>
+      <th>Stock</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-c>
+    <tr>
+      <td>{{ c.dni }}</td>
+      <td>{{ c.nombre}}</td>
+      <td>{{ c.direccion }}</td>
+      <td>{{ c.telefono }}</td>
+      <td>
+        <button
+          pButton
+          type="button"
+          icon="pi pi-pencil"
+          class="p-button-rounded"
+          (click)="editaCliente()"
+          title="Edita cliente"
+        ></button>
+      </td>
+      <td>
+        <button
+          pButton
+          type="button"
+          icon="pi pi-trash"
+          class="p-button-rounded"
+          (click)="borraCliente()"
+          title="Borra cliente"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
