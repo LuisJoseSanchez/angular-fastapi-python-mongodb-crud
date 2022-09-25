@@ -22,7 +22,9 @@ export class ClientesService {
   }
 
   addCliente(cliente: Cliente) {
-    this.http.post(`${API_URL}cliente`, cliente);
+    this.http.post(`${API_URL}cliente`, cliente).subscribe(
+      resp => console.log(resp)
+    );
   }
 
   updateCliente(id: string, cliente: Cliente) {
